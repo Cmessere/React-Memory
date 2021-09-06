@@ -27,11 +27,7 @@ const Board = ({contributors}:any) => {
     let memoryCards:string[] = [...randomArray, ...randomArray]
     shuffle(memoryCards)
     setAvatars([...memoryCards])
-    console.log("memory", memoryCards)
   }
-
-  console.log("avatars",avatars)
-  console.log("contributors",contributors)
 
   return (
     <div className="board-div" id="board">
@@ -45,7 +41,9 @@ const Board = ({contributors}:any) => {
 };
 
 const Card = ({imageUrl}:any) => {
-  console.log("url", imageUrl)
+  const [found, setFound] = React.useState(false)
+
+  if(found)
   return(
     <div className="card">
       <img 
@@ -55,6 +53,15 @@ const Card = ({imageUrl}:any) => {
       />
     </div>
   )
+  else{
+    return(
+      <div className="card">
+        <div className="empty-card" onClick={() => setFound(true)}>
+          
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Board;
