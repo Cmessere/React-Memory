@@ -1,7 +1,9 @@
 .header-div{
   display: flex;
+  margin: 5px;
   padding: 2px;
   width: 100vw;
+  flex: 2;
   justify-content: center;
 }
 

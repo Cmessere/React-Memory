@@ -1,10 +1,12 @@
+import "../Styles/App.css"
+import Board from "./Board";
 import Header from './Header';
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <div className="board-div" id="board"></div>
+      <Board />
     </div>
   );
 }
