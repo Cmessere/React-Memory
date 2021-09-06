@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from '../Components/Header';
 import { render, screen } from '@testing-library/react';
 
 test('Header Div Exists', () => {
