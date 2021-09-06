@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('Board Div Exists', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = document.getElementById("board");
   expect(linkElement).toBeInTheDocument();
 });
