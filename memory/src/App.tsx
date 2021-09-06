@@ -1,10 +1,9 @@
-import React from 'react';
-import './App.css';
+import Header from './Header';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <div className="header-div" id="header">GitHub Memory</div>
+      <Header />
       <div className="board-div" id="board"></div>
     </div>
   );
