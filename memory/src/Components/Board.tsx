@@ -7,7 +7,7 @@ const Board = () => {
   const [avatars, setAvatars] = React.useState([] as any)
   const [error, setError] = React.useState(undefined as any)
 
-  const uniqueCards = 6;
+  const uniqueCards:number = 6;
 
   React.useEffect(() =>{
     getContributors()
@@ -33,9 +33,10 @@ const Board = () => {
   }
 
   const duplicateAndShuffle = () => {
-    let memoryCards = [...avatars, ...avatars]
+    let memoryCards:string[] = [...avatars, ...avatars]
     shuffle(memoryCards)
     console.log("memoryCards", memoryCards)
+    setAvatars(memoryCards)
   }
 
   console.log("avatars", avatars)
@@ -53,7 +54,6 @@ const Board = () => {
   return (
     <div className="board-div" id="board">
       <div className="internal-board-div" id="internal-board">
-        
       </div>
     </div>
   );
