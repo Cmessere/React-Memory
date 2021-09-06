@@ -1,0 +1,15 @@
+.card{
+    margin: auto;
+    height: 20vw;
+    width: 20vw;
+    padding: 5px;
+}
+.card-div{
+    margin: auto;
+}
+.memory-image{
+    margin: auto;
+    max-height: 20vw;
+    max-width: 20vw;
+    border: 2px solid black;
+}

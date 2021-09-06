@@ -1,0 +1,23 @@
+.board-div{
+    display: flex;
+    margin: 5px;
+    padding: 2px;
+    width: 100vw;
+    flex: 3;
+    justify-content: center;
+}
+
+.internal-board-div{
+    display: flex;
+    border: 2px solid black;
+    width: 90vw;
+    padding: 2px;
+    justify-content: center;
+}
+.wrapper{
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    min-width: 90vw;
+}

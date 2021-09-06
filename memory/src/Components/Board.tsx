@@ -1,62 +1,60 @@
 import React from "react";
-import { getContributors } from "../Services/ApiClient";
+import "../Styles/Board.css"
+import "../Styles/Card.css"
+
 import { shuffle } from "../Utility/UtilityFunctions";
 
-const Board = () => {
-  const [contributors, setContributors] = React.useState([])
+const Board = ({contributors}:any) => {
   const [avatars, setAvatars] = React.useState([] as any)
-  const [error, setError] = React.useState(undefined as any)
-
   const uniqueCards:number = 6;
 
   React.useEffect(() =>{
-    getContributors()
-      .then((response:any)=>{
-          setContributors(response.data.slice(0, 25))
-          console.log("response", response)
-      })
-      .catch((error) =>{
-        setError(error)
-      })
-
-    getMemoryImages()
-    duplicateAndShuffle()
-  },[])
+    const randomArray = getMemoryImages()
+    duplicateAndShuffle(randomArray)
+  },[contributors])
 
   const getMemoryImages = () =>{
-    let randomArray:number[] = [];
+    let randomArray = [];
     while(randomArray.length < uniqueCards){
-        const random = Math.floor(Math.random() * 24) + 1;
+        let random = Math.floor(Math.random() * 24) + 1;
         if(randomArray.indexOf(random) === -1) randomArray.push(contributors[random]);
     }
-    setAvatars(randomArray)
+
+    return randomArray
   }
 
-  const duplicateAndShuffle = () => {
-    let memoryCards:string[] = [...avatars, ...avatars]
+  const duplicateAndShuffle = (randomArray:string[]) => {
+    let memoryCards:string[] = [...randomArray, ...randomArray]
     shuffle(memoryCards)
-    console.log("memoryCards", memoryCards)
-    setAvatars(memoryCards)
+    setAvatars([...memoryCards])
+    console.log("memory", memoryCards)
   }
 
-  console.log("avatars", avatars)
-  
-  if(error)
-  return(
-    <div className="board-div" id="board">
-      <div className="internal-board-div" id="internal-board">
-        <div className="error-div">
-          {error.message}
-        </div>
-      </div>
-    </div>
-  )
+  console.log("avatars",avatars)
+  console.log("contributors",contributors)
+
   return (
     <div className="board-div" id="board">
       <div className="internal-board-div" id="internal-board">
+        <div className="wrapper">
+          {avatars.map((x:string,i:number )=> <div className="card-div" key={i}><Card imageUrl={x}/></div>)}
+        </div>
       </div>
     </div>
   );
 };
+
+const Card = ({imageUrl}:any) => {
+  console.log("url", imageUrl)
+  return(
+    <div className="card">
+      <img 
+        className="memory-image"
+        alt=""
+        src={imageUrl}
+      />
+    </div>
+  )
+}
 
 export default Board;
