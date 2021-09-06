@@ -13,3 +13,9 @@ test('Header Div Exists', () => {
   const linkElement = document.getElementById("header");
   expect(linkElement).toBeInTheDocument();
 });
+
+test('Memory title is correct', () => {
+  render(<App />);
+  const memoryTitle = screen.getByText(/GitHub Memory/i);
+  expect(memoryTitle).toBeInTheDocument();
+});
