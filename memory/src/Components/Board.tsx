@@ -1,5 +1,6 @@
 import React from "react";
 import { getContributors } from "../Services/ApiClient";
+import { shuffle } from "../Utility/UtilityFunctions";
 
 const Board = () => {
   const [contributors, setContributors] = React.useState([])
@@ -19,6 +20,7 @@ const Board = () => {
       })
 
     getMemoryImages()
+    duplicateAndShuffle()
   },[])
 
   const getMemoryImages = () =>{
@@ -29,6 +31,13 @@ const Board = () => {
     }
     setAvatars(randomArray)
   }
+
+  const duplicateAndShuffle = () => {
+    let memoryCards = [...avatars, ...avatars]
+    shuffle(memoryCards)
+    console.log("memoryCards", memoryCards)
+  }
+
   console.log("avatars", avatars)
   
   if(error)
