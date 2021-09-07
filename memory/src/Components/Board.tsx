@@ -108,10 +108,10 @@ const Board = ({contributors}:any) => {
                 />
             </div>)}
             <div className="Footer">
-              <p className="Timer">Time: {timer}</p>
+              <p className="Timer">Time: {timer} seconds</p>
               <p className="Score">Score: {score}</p>
             </div>
-            <GameCompletedDialog handleRestart={handleRestart} isOpen={gameCompletedModal} />
+            <GameCompletedDialog handleRestart={handleRestart} isOpen={gameCompletedModal} score={score}/>
             <GameOverDialog handleRestart={handleRestart} isOpen={gameOverModal} score={score}/>
         </div>
       </div>

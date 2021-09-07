@@ -24,6 +24,16 @@
 .Footer{
     display: flex;
     justify-content: space-between;
+    font-size: large;
+    font-weight: bolder;
     max-width: 90vw;
     min-width: 90vw;
+}
+
+.Timer{
+    margin-left: 2vw;
+}
+
+.Score{
+    margin-right: 2vw;
 }
