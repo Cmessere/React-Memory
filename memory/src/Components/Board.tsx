@@ -7,13 +7,23 @@ import { shuffle } from "../Utility/UtilityFunctions";
 const Board = ({contributors}:any) => {
   const [avatars, setAvatars] = React.useState([] as any)
   const [turnedCards, setTurnedCards] = React.useState([] as any);
+  const [foundCards, setFound] = React.useState([] as any);
 
   const uniqueCards:number = 6;
-
+  console.log("found", foundCards)
+  console.log("turned", turnedCards)
   React.useEffect(() =>{
     const randomArray = getMemoryImages()
     duplicateAndShuffle(randomArray)
   },[contributors])
+
+  React.useEffect(() => {
+    if(turnedCards.length === 2){
+      if(avatars[turnedCards[0]] === avatars[turnedCards[1]]){
+        setFound((alreadyFound:any) => ([...alreadyFound, avatars[turnedCards[0]]]))
+      }
+    }
+  },[turnedCards])
 
   const getMemoryImages = () =>{
     let randomArray = [];
@@ -35,6 +45,10 @@ const Board = ({contributors}:any) => {
     return turnedCards.includes(index)
   }
 
+  const checkIfCardIsFound = (url:string) => {
+    return foundCards.includes(url)
+  }
+
   const turnCard = (index:number) => {
     if(turnedCards.length === 1){
       setTurnedCards((turned: any) => [...turned, index])
@@ -54,6 +68,7 @@ const Board = ({contributors}:any) => {
                 imageUrl={x}
                 index={index}
                 isTurned={checkIfCardIsTurned(index)}
+                isFound={checkIfCardIsFound(x)}
                 turnCard={turnCard}
                 />
             </div>)}
@@ -63,11 +78,11 @@ const Board = ({contributors}:any) => {
   );
 };
 
-const Card = ({imageUrl, isTurned, turnCard, index}:any) => {
+const Card = ({imageUrl, isTurned, isFound, turnCard, index}:any) => {
   const cardClicked = () => {
-    !isTurned && turnCard(index)
+    !isTurned && !isFound && turnCard(index)
   }
-  if(isTurned)
+  if(isTurned || isFound)
   return(
     <div className="card" >
       <img 
