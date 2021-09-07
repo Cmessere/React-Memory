@@ -1,3 +1,4 @@
+import { Button, Dialog, DialogTitle } from "@material-ui/core";
 import React from "react";
 import "../Styles/Board.css"
 import "../Styles/Card.css"
@@ -8,15 +9,16 @@ const Board = ({contributors}:any) => {
   const [avatars, setAvatars] = React.useState([] as any)
   const [turnedCards, setTurnedCards] = React.useState([] as any);
   const [foundCards, setFound] = React.useState([] as any);
+  const [gameCompletedModal, setGameCompletedModal] = React.useState(false);
+
 
   const uniqueCards:number = 6;
-  console.log("found", foundCards)
-  console.log("turned", turnedCards)
+
   React.useEffect(() =>{
     const randomArray = getMemoryImages()
     duplicateAndShuffle(randomArray)
   },[contributors])
-
+  
   React.useEffect(() => {
     if(turnedCards.length === 2){
       if(avatars[turnedCards[0]] === avatars[turnedCards[1]]){
@@ -24,6 +26,19 @@ const Board = ({contributors}:any) => {
       }
     }
   },[turnedCards])
+
+  React.useEffect(() =>{
+    if(foundCards.length === uniqueCards){
+      console.log("Nice! You won")
+      setGameCompletedModal(true)
+    }
+  },[foundCards])
+
+  const handleRestart = () => {
+    setGameCompletedModal(false);
+    setTurnedCards([])
+    setFound([])
+  };
 
   const getMemoryImages = () =>{
     let randomArray = [];
@@ -72,6 +87,7 @@ const Board = ({contributors}:any) => {
                 turnCard={turnCard}
                 />
             </div>)}
+            <GameCompletedDialog handleRestart={handleRestart} isOpen={gameCompletedModal} />
         </div>
       </div>
     </div>
@@ -101,5 +117,16 @@ const Card = ({imageUrl, isTurned, isFound, turnCard, index}:any) => {
     )
   }
 }
+
+const GameCompletedDialog = ({handleRestart, isOpen}:any) => {
+
+  return(
+    <Dialog onClose={handleRestart} aria-labelledby="simple-dialog-title" open={isOpen}>
+      <DialogTitle id="simple-dialog-title">You Won!</DialogTitle>
+      <Button onClick={handleRestart}>Play Again</Button>
+    </Dialog>
+  )
+}
+
 
 export default Board;
