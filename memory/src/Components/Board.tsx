@@ -41,12 +41,16 @@ const Board = ({contributors}:any) => {
   };
 
   const getMemoryImages = () =>{
-    let randomArray = [];
+    let randomArray:string[] = [];
+    let alreadyPicked:number[] = []
+    
     while(randomArray.length < uniqueCards){
-        let random = Math.floor(Math.random() * 24) + 1;
-        if(randomArray.indexOf(random) === -1) randomArray.push(contributors[random]);
+        let random:any = Math.floor(Math.random() * 24) + 1;
+        if(randomArray.indexOf(random) === -1 && !alreadyPicked.includes(random)){
+          randomArray.push(contributors[random]);
+        }
+        alreadyPicked.push(random)
     }
-
     return randomArray
   }
 
