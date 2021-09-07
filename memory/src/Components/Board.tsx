@@ -1,9 +1,10 @@
-import { Button, Dialog, DialogTitle } from "@material-ui/core";
 import React from "react";
 import "../Styles/Board.css"
 import "../Styles/Card.css"
 
 import { shuffle } from "../Utility/UtilityFunctions";
+import { Card } from "./Card";
+import { GameCompletedDialog } from "./GameCompletedDialog";
 
 const Board = ({contributors}:any) => {
   const [avatars, setAvatars] = React.useState([] as any)
@@ -64,12 +65,9 @@ const Board = ({contributors}:any) => {
   }
 
   const turnCard = (index:number) => {
-    if(turnedCards.length === 1){
-      setTurnedCards((turned: any) => [...turned, index])
-    }
-    else{
-      setTurnedCards([index])
-    }
+    turnedCards.length === 1
+     ? setTurnedCards((turned: any) => [...turned, index])
+     : setTurnedCards([index])
   };
 
   return (
@@ -92,40 +90,5 @@ const Board = ({contributors}:any) => {
     </div>
   );
 };
-
-const Card = ({imageUrl, isTurned, isFound, turnCard, index}:any) => {
-  const cardClicked = () => {
-    !isTurned && !isFound && turnCard(index)
-  }
-  if(isTurned || isFound)
-  return(
-    <div className="card" >
-      <img 
-        className="memory-image"
-        alt=""
-        src={imageUrl}
-      />
-    </div>
-  )
-  else{
-    return(
-      <div className="card" onClick={cardClicked}>
-        <div className="empty-card">
-        </div>
-      </div>
-    )
-  }
-}
-
-const GameCompletedDialog = ({handleRestart, isOpen}:any) => {
-
-  return(
-    <Dialog onClose={handleRestart} aria-labelledby="simple-dialog-title" open={isOpen}>
-      <DialogTitle id="simple-dialog-title">You Won!</DialogTitle>
-      <Button onClick={handleRestart}>Play Again</Button>
-    </Dialog>
-  )
-}
-
 
 export default Board;
