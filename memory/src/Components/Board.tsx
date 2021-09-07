@@ -29,7 +29,6 @@ const Board = ({contributors}:any) => {
 
   React.useEffect(() =>{
     if(foundCards.length === uniqueCards){
-      console.log("Nice! You won")
       setGameCompletedModal(true)
     }
   },[foundCards])
