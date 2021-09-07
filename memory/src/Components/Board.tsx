@@ -20,8 +20,7 @@ const Board = ({contributors}:any) => {
   const uniqueCards:number = 6;
 
   React.useEffect(() =>{
-    const randomArray = getMemoryImages()
-    duplicateAndShuffle(randomArray)
+    getMemoryImages()
   },[contributors])
   
   React.useEffect(() => {
@@ -71,14 +70,10 @@ const Board = ({contributors}:any) => {
         }
         alreadyPicked.push(random)
     }
-        let memoryCards:string[] = [...randomArray, ...randomArray]
+      let memoryCards:string[] = [...randomArray, ...randomArray]
       shuffle(memoryCards)
       setAvatars([...memoryCards])
       return memoryCards
-  }
-
-  const duplicateAndShuffle = (randomArray:string[]) => {
-    
   }
 
   const checkIfCardIsTurned = (index:number) => {
