@@ -29,6 +29,9 @@ const Board = ({contributors}:any) => {
         setFound((alreadyFound:any) => ([...alreadyFound, avatars[turnedCards[0]]]))
         setScore((currentScore:number) => currentScore + 100)
       }
+      else{
+        setTimeout(() => setTurnedCards([]), 500)
+      }
     }
   },[turnedCards])
 
