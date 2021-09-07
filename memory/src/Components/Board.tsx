@@ -15,7 +15,7 @@ const Board = ({contributors}:any) => {
   const [gameCompletedModal, setGameCompletedModal] = React.useState(false);
   const [gameOverModal, setGameOverModal] = React.useState(false);
   const [score, setScore] = React.useState(0);
-  const [timer, setTimer] = React.useState(60);
+  const [timer, setTimer] = React.useState(3);
 
   const uniqueCards:number = 6;
 
@@ -112,7 +112,7 @@ const Board = ({contributors}:any) => {
               <p className="Score">Score: {score}</p>
             </div>
             <GameCompletedDialog handleRestart={handleRestart} isOpen={gameCompletedModal} />
-            <GameOverDialog handleRestart={handleRestart} isOpen={gameOverModal} />
+            <GameOverDialog handleRestart={handleRestart} isOpen={gameOverModal} score={score}/>
         </div>
       </div>
       

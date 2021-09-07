@@ -1,0 +1,30 @@
+.gameover-dialog{
+    display: flex;
+    width: 60vw;
+    height: 60vh;
+    margin: auto;
+    flex-direction: column;
+}
+
+.gameover-dialog-title{
+    font-size: 10vw;
+    font-weight: bolder;
+    align-self: center;
+    text-align: center;
+}
+.gameover-dialog-score{
+    font-size: 4vw;
+    font-weight: bolder;
+    align-self: center;
+    text-align: center;
+}
+
+.gameover-button{
+    background-color:cornflowerblue!important;
+    color: white!important;
+}
+
+.gameover-button:hover{
+    background-color:rgb(166, 197, 255)!important;
+    color: white!important;
+}
