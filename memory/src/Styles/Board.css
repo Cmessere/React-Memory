@@ -21,3 +21,9 @@
     max-width: 90vw;
     min-width: 90vw;
 }
+.Footer{
+    display: flex;
+    justify-content: space-between;
+    max-width: 90vw;
+    min-width: 90vw;
+}

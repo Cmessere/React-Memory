@@ -5,13 +5,17 @@ import "../Styles/Card.css"
 import { shuffle } from "../Utility/UtilityFunctions";
 import { Card } from "./Card";
 import { GameCompletedDialog } from "./GameCompletedDialog";
+import { GameOverDialog } from "./GameOverDialog";
 
 const Board = ({contributors}:any) => {
   const [avatars, setAvatars] = React.useState([] as any)
   const [turnedCards, setTurnedCards] = React.useState([] as any);
   const [foundCards, setFound] = React.useState([] as any);
-  const [gameCompletedModal, setGameCompletedModal] = React.useState(false);
 
+  const [gameCompletedModal, setGameCompletedModal] = React.useState(false);
+  const [gameOverModal, setGameOverModal] = React.useState(false);
+  const [score, setScore] = React.useState(0);
+  const [timer, setTimer] = React.useState(60);
 
   const uniqueCards:number = 6;
 
@@ -24,6 +28,7 @@ const Board = ({contributors}:any) => {
     if(turnedCards.length === 2){
       if(avatars[turnedCards[0]] === avatars[turnedCards[1]]){
         setFound((alreadyFound:any) => ([...alreadyFound, avatars[turnedCards[0]]]))
+        setScore((currentScore:number) => currentScore + 100)
       }
     }
   },[turnedCards])
@@ -34,16 +39,31 @@ const Board = ({contributors}:any) => {
     }
   },[foundCards])
 
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if(timer > 0)
+        setTimer(timer - 1)
+      else{
+        setGameOverModal(true)
+      }
+    }, 1000);
+      return () => clearInterval(interval);
+  }, [timer]);
+
   const handleRestart = () => {
     setGameCompletedModal(false);
+    setGameOverModal(false);
     setTurnedCards([])
     setFound([])
+    setScore(0)
+    setTimer(60)
+    setAvatars(getMemoryImages);
   };
 
   const getMemoryImages = () =>{
     let randomArray:string[] = [];
     let alreadyPicked:number[] = []
-    
+
     while(randomArray.length < uniqueCards){
         let random:any = Math.floor(Math.random() * 24) + 1;
         if(randomArray.indexOf(random) === -1 && !alreadyPicked.includes(random)){
@@ -51,13 +71,14 @@ const Board = ({contributors}:any) => {
         }
         alreadyPicked.push(random)
     }
-    return randomArray
+        let memoryCards:string[] = [...randomArray, ...randomArray]
+      shuffle(memoryCards)
+      setAvatars([...memoryCards])
+      return memoryCards
   }
 
   const duplicateAndShuffle = (randomArray:string[]) => {
-    let memoryCards:string[] = [...randomArray, ...randomArray]
-    shuffle(memoryCards)
-    setAvatars([...memoryCards])
+    
   }
 
   const checkIfCardIsTurned = (index:number) => {
@@ -88,9 +109,15 @@ const Board = ({contributors}:any) => {
                 turnCard={turnCard}
                 />
             </div>)}
+            <div className="Footer">
+              <p className="Timer">Time: {timer}</p>
+              <p className="Score">Score: {score}</p>
+            </div>
             <GameCompletedDialog handleRestart={handleRestart} isOpen={gameCompletedModal} />
+            <GameOverDialog handleRestart={handleRestart} isOpen={gameOverModal} />
         </div>
       </div>
+      
     </div>
   );
 };
