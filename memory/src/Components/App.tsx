@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 import { getContributors } from "../Services/ApiClient";
 import { Contributor } from "../Services/Types";
@@ -9,6 +10,7 @@ import Header from './Header';
 const App = () => {
   const [contributors, setContributors] = React.useState([])
   const [error, setError] = React.useState(undefined as any)
+  const [start, setStart] = React.useState(false)
 
   React.useEffect(() =>{
     getContributors()
@@ -30,7 +32,7 @@ const App = () => {
       </div>
     </div>
   )
-  if(contributors)
+  if(contributors && start)
   return (
     <div className="App">
       <Header />
@@ -39,7 +41,11 @@ const App = () => {
   );
   else
     return(
-      <div>Loading...</div>
+      <div className="Intro-Div">
+        <p className="Intro-Paragraph-desktop">Welcome To GitHub Memory.</p>
+        <p className="Intro-Paragraph-mobile">GitHub Memory</p>
+        <button className="Intro-button" onClick={() => setStart(true)}>PLAY!</button>
+      </div>
     )
 }
 
