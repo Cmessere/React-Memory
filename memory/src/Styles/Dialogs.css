@@ -1,19 +1,18 @@
 .gameover-dialog{
     display: flex;
-    min-width: 60vw;
-    min-height: 60vh;
+
     margin: auto;
     flex-direction: column;
 }
 
 .gameover-dialog-title{
-    font-size: 10vw;
+    font-size: 4vw;
     font-weight: bolder;
     align-self: center;
     text-align: center;
 }
 .gameover-dialog-score{
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: bolder;
     align-self: center;
     text-align: center;
