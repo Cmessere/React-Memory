@@ -1,13 +1,12 @@
 import React from "react";
 import Adapter from "enzyme-adapter-react-16";
 import { shallow, configure } from "enzyme";
-import Board from '../Components/Board';
-
+import App from "../Components/App";
 
 configure({ adapter: new Adapter() });
 
-describe("Board", () => {
+describe("App", () => {
  it("renders correctly", () => {
-   shallow(<Board contributors={[]} />);
+   shallow(<App />);
  });
 });
