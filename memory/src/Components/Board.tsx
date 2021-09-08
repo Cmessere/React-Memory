@@ -1,4 +1,5 @@
 import React from "react";
+import { BoardProps, Contributor } from "../Services/Types";
 import "../Styles/Board.css"
 import "../Styles/Card.css"
 
@@ -7,7 +8,7 @@ import { Card } from "./Card";
 import { GameCompletedDialog } from "./GameCompletedDialog";
 import { GameOverDialog } from "./GameOverDialog";
 
-const Board = ({contributors}:any) => {
+const Board = ({contributors}:BoardProps) => {
   const [avatars, setAvatars] = React.useState([] as any)
   const [turnedCards, setTurnedCards] = React.useState([] as any);
   const [foundCards, setFound] = React.useState([] as any);
@@ -63,7 +64,7 @@ const Board = ({contributors}:any) => {
   };
 
   const getMemoryImages = () =>{
-    let randomArray:string[] = [];
+    let randomArray:Contributor[] = [];
     let alreadyPicked:number[] = []
 
     while(randomArray.length < uniqueCards){
@@ -73,7 +74,7 @@ const Board = ({contributors}:any) => {
         }
         alreadyPicked.push(random)
     }
-      let memoryCards:string[] = [...randomArray, ...randomArray]
+      let memoryCards:Contributor[] = [...randomArray, ...randomArray]
       shuffle(memoryCards)
       setAvatars([...memoryCards])
       return memoryCards

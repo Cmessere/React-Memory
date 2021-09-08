@@ -1,4 +1,6 @@
-export function shuffle(array:string[]) {
+import { Contributor } from "../Services/Types";
+
+export function shuffle(array:Contributor[]) {
     var currentIndex = array.length,  randomIndex;
   
     // While there remain elements to shuffle...

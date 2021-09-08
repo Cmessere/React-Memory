@@ -1,6 +1,6 @@
-import React from "react";
+import { CardProps } from "../Services/Types";
 
-export const Card = ({ imageUrl, isTurned, isFound, turnCard, index }: any) => {
+export const Card = ({ imageUrl, isTurned, isFound, turnCard, index }: CardProps) => {
   const cardClicked = () => {
     !isTurned && !isFound && turnCard(index);
   };

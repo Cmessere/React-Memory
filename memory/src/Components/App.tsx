@@ -1,8 +1,10 @@
 import React from "react";
 import { getContributors } from "../Services/ApiClient";
+import { Contributor } from "../Services/Types";
 import "../Styles/App.css"
 import Board from "./Board";
 import Header from './Header';
+
 
 const App = () => {
   const [contributors, setContributors] = React.useState([])
@@ -11,7 +13,7 @@ const App = () => {
   React.useEffect(() =>{
     getContributors()
       .then((response:any)=>{
-          setContributors(response.data.slice(0, 25).map((x:any)=> x.avatar_url))
+          setContributors(response.data.slice(0, 25).map((x:Contributor)=> x.avatar_url))
       })
       .catch((error) =>{
         setError(error)

@@ -1,8 +1,9 @@
 import { Dialog,Button, DialogContent } from "@material-ui/core";
+import { DialogProps } from "../Services/Types";
 import "../Styles/Dialogs.css";
 
 
-export const GameOverDialog = ({ handleRestart, isOpen, score }: any) => {
+export const GameOverDialog = ({ handleRestart, isOpen, score }: DialogProps) => {
   return (
       <Dialog maxWidth="lg" onClose={handleRestart} open={isOpen} >
         <DialogContent>
