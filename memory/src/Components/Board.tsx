@@ -22,6 +22,7 @@ const Board = ({contributors}:BoardProps) => {
 
   React.useEffect(() =>{
     getMemoryImages()
+    // eslint-disable-next-line
   },[contributors])
   
   React.useEffect(() => {
