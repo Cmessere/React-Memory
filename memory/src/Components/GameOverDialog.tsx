@@ -1,4 +1,4 @@
-import { Dialog,Button, DialogContent } from "@material-ui/core";
+import { Dialog, DialogContent } from "@material-ui/core";
 import { DialogProps } from "../Services/Types";
 import "../Styles/Dialogs.css";
 

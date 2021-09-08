@@ -1,4 +1,4 @@
-import { Button, Dialog, DialogContent } from "@material-ui/core";
+import { Dialog, DialogContent } from "@material-ui/core";
 import { DialogProps } from "../Services/Types";
 
 export const GameCompletedDialog = ({ handleRestart, isOpen, score }: DialogProps) => {
