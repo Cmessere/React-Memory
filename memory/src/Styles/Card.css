@@ -10,8 +10,8 @@
         margin: auto;
         max-height: 20vw;
         max-width: 20vw;
-        border-radius: 25px;
-        border: 2px solid rgba(0,146,255,1);
+        border-radius: 15px;
+        border: 2px solid rgb(141, 205, 255);
     }
     
     .empty-card{
@@ -19,10 +19,10 @@
         height: 20vw;
         width: 20vw; 
         background: rgb(0,146,255);
-        background: radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 0%, rgba(0,146,255,1) 100%); 
+        background: radial-gradient(circle, rgb(141, 205, 255) 0%, rgba(255,255,255,1) 0%, rgb(141, 205, 255) 100%); 
         cursor: pointer;
-        border-radius: 25px;
-        border: 2px solid rgba(0,146,255,1);
+        border-radius: 15px;
+        border: 2px solid rgb(141, 205, 255);
     }
 }
 @media screen and (min-width: 801px) {
@@ -38,7 +38,7 @@
         max-width: 10vw;
         min-width: 10vw;
         min-height: 10vw;
-        border: 5px solid rgba(0,146,255,1);
+        border: 5px solid rgb(141, 205, 255);
         border-radius: 25px;
     }
     
@@ -47,9 +47,9 @@
         height: 10vw;
         width: 10vw; 
         background: rgb(0,146,255);
-        background: radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 0%, rgba(0,146,255,1) 100%); 
+        background: radial-gradient(circle, rgb(141, 205, 255) 0%, rgba(255,255,255,1) 0%, rgb(141, 205, 255) 100%); 
         cursor: pointer;
-        border: 5px solid rgba(0,146,255,1);
+        border: 5px solid rgb(141, 205, 255);
         border-radius: 25px;
 
     }

@@ -1,6 +1,6 @@
 @media screen and (max-width: 801px) {
     .gameover-dialog{
-        color: rgba(0,146,255,1);
+        color: rgb(141, 205, 255);
         display: flex;
         margin: auto;
         flex-direction: column;
@@ -23,7 +23,7 @@
 }
 @media screen and (min-width: 801px) {
     .gameover-dialog{
-        color: rgba(0,146,255,1);
+        color: rgb(141, 205, 255);
         display: flex;
         margin: auto;
         flex-direction: column;
@@ -47,7 +47,7 @@
 
 
 .gameover-button{
-    background-color:rgba(0,146,255,1)!important;
+    background-color:rgb(141, 205, 255)!important;
     height: 5vh;
     color: white!important;
 }
