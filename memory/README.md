@@ -1,12 +1,14 @@
-# Getting Started with Create React App
-
+# Memory
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm install`
+To install all dependencies required to launch the application.
+
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,33 +16,31 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+# Observations
+## Testing
+This is the first time in a long time where I tested rendering components, most of the times I am used to testing algorithms and functions. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7 tests is not that much, but most of the logic is bound to component's states and I am not that experienced on testing React Hooks. I am going to focus more on those in the future.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Libraries and Modules
+I tried to avoid using too many libraries, the only exceptions are Axios for some quality of life and Material UI's Dialog.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I could have avoided Material UI altogether, but felt that implementing a Dialog from scratch was too inconvenient and not the scope of the project.
+  
+The remaining libraries are for testing
 
-### `yarn eject`
+## Difficulties
+I have to admit that figuring out how to implement the game's logic was harder than I thought. Needed some trial and error to get it right, but all in all it was fun.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Conclusions
+If I had more time I would probably focus on testing. I think it's the only real lack thereof. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Maybe tweak the style a little, add difficulty levels and maybe other image sets to choose from. There is a lot of potential upgrades that do not require too much effort.
+ 
+I would probably test more devices and resolutions if this was not an exercise. The Ipad pro specifically has been fickle in the past, and here it was not an exception.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
