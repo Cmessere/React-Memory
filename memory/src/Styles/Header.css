@@ -1,21 +1,38 @@
+@media screen and (max-width: 801px) {
+    .internal-header-div{
+      display: flex;
+      width: 90vw;
+      padding: 2px;
+      justify-content: center;
+    }
+  
+    .title{
+      font-size: 4vh;
+      font-weight: bold;
+    }
+  }
+  @media screen and (min-width: 801px) {
+      .internal-header-div{
+        display: flex;
+        border: 2px solid black;
+        width: 90vw;
+        padding: 2px;
+        justify-content: center;
+      }
+    
+      .title{
+        font-size: 2vw;
+        font-weight: bold;
+      }
+  }
+  
+
 .header-div{
   display: flex;
-  margin: 5px;
+  margin: auto;
   padding: 2px;
-  width: 100vw;
+  width: 90vw;
   flex: 2;
   justify-content: center;
 }
 
-.internal-header-div{
-  display: flex;
-  border: 2px solid black;
-  width: 90vw;
-  padding: 2px;
-  justify-content: center;
-}
-
-.title{
-  font-size: 2vw;
-  font-weight: bold;
-}

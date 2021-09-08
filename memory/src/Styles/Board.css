@@ -1,34 +1,70 @@
+@media screen and (max-width: 801px) {
+.internal-board-div{
+        display: flex;
+        width: 90vw;
+        padding: 2px;
+        justify-content: center;
+    }
+
+    .wrapper{
+        display: flex;
+        margin: auto;
+        flex-wrap: wrap;
+        max-width: 80vw;
+        min-width: 80vw;
+    }
+
+    .Footer{
+        display: flex;
+        justify-content: space-between;
+        font-size: 2vh;
+        font-weight: bolder;
+        margin-top: 5vh;
+        max-width: 80vw;
+        min-width: 80vw;
+    }
+}
+@media screen and (min-width: 801px) {
+    .internal-board-div{
+        display: flex;
+        border: 2px solid black;
+        width: 90vw;
+        padding: 2px;
+        justify-content: center;
+    }
+
+    .wrapper{
+        display: flex;
+        margin: auto;
+        flex-wrap: wrap;
+        max-width: 90vw;
+        min-width: 90vw;
+    }
+
+    .Footer{
+        display: flex;
+        justify-content: space-between;
+        font-size: 2vw;
+        font-weight: bolder;
+        margin-top: 5vh;
+        max-width: 90vw;
+        min-width: 90vw;
+    }
+    
+}
+
+
 .board-div{
+    margin: auto;
+    margin-top: 3vh;
     display: flex;
-    margin: 5px;
     padding: 2px;
-    width: 100vw;
+    width: 90vw;
     flex: 3;
     justify-content: center;
 }
 
-.internal-board-div{
-    display: flex;
-    border: 2px solid black;
-    width: 90vw;
-    padding: 2px;
-    justify-content: center;
-}
-.wrapper{
-    display: flex;
-    margin: auto;
-    flex-wrap: wrap;
-    max-width: 90vw;
-    min-width: 90vw;
-}
-.Footer{
-    display: flex;
-    justify-content: space-between;
-    font-size: large;
-    font-weight: bolder;
-    max-width: 90vw;
-    min-width: 90vw;
-}
+
 
 .Timer{
     margin-left: 2vw;

@@ -1,7 +1,7 @@
 .gameover-dialog{
     display: flex;
-    width: 60vw;
-    height: 60vh;
+    min-width: 60vw;
+    min-height: 60vh;
     margin: auto;
     flex-direction: column;
 }
