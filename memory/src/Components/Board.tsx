@@ -43,7 +43,7 @@ const Board = ({contributors}:any) => {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      if(timer > 0)
+      if(timer > 0 && !gameCompletedModal)
         setTimer(timer - 1)
       else{
         setGameOverModal(true)
