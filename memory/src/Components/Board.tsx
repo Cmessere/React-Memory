@@ -47,7 +47,8 @@ const Board = ({contributors}:BoardProps) => {
       if(timer > 0 && !gameCompletedModal)
         setTimer(timer - 1)
       else{
-        setGameOverModal(true)
+        if(!gameCompletedModal)
+          setGameOverModal(true)
       }
     }, 1000);
       return () => clearInterval(interval);
