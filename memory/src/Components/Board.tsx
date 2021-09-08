@@ -15,7 +15,7 @@ const Board = ({contributors}:any) => {
   const [gameCompletedModal, setGameCompletedModal] = React.useState(false);
   const [gameOverModal, setGameOverModal] = React.useState(false);
   const [score, setScore] = React.useState(0);
-  const [timer, setTimer] = React.useState(3);
+  const [timer, setTimer] = React.useState(60);
 
   const uniqueCards:number = 6;
 
