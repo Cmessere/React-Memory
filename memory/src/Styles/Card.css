@@ -10,16 +10,19 @@
         margin: auto;
         max-height: 20vw;
         max-width: 20vw;
-        border: 2px solid black;
+        border-radius: 25px;
+        border: 2px solid rgba(0,146,255,1);
     }
     
     .empty-card{
         margin: auto;
         height: 20vw;
         width: 20vw; 
-        background-color: lightskyblue;
+        background: rgb(0,146,255);
+        background: radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 0%, rgba(0,146,255,1) 100%); 
         cursor: pointer;
-        border: 2px solid black;
+        border-radius: 25px;
+        border: 2px solid rgba(0,146,255,1);
     }
 }
 @media screen and (min-width: 801px) {
@@ -33,16 +36,22 @@
         margin: auto;
         max-height: 10vw;
         max-width: 10vw;
-        border: 2px solid black;
+        min-width: 10vw;
+        min-height: 10vw;
+        border: 5px solid rgba(0,146,255,1);
+        border-radius: 25px;
     }
     
     .empty-card{
         margin: auto;
         height: 10vw;
         width: 10vw; 
-        background-color: lightskyblue;
+        background: rgb(0,146,255);
+        background: radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 0%, rgba(0,146,255,1) 100%); 
         cursor: pointer;
-        border: 2px solid black;
+        border: 5px solid rgba(0,146,255,1);
+        border-radius: 25px;
+
     }
 }
 

@@ -1,26 +1,53 @@
-.gameover-dialog{
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    height: 40vh;
-    padding: 25px;
+@media screen and (max-width: 801px) {
+    .gameover-dialog{
+        color: rgba(0,146,255,1);
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        height: 40vh;
+        padding: 15px;
+    }
+    
+    .gameover-dialog-title{
+        font-size: 3vh;
+        font-weight: bolder;
+        align-self: center;
+        text-align: center;
+    }
+    .gameover-dialog-score{
+        font-size: 2vh;
+        font-weight: 500;
+        align-self: center;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 801px) {
+    .gameover-dialog{
+        color: rgba(0,146,255,1);
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        height: 40vh;
+        padding: 25px;
+    }
+    
+    .gameover-dialog-title{
+        font-size: 2vw;
+        font-weight: bolder;
+        align-self: center;
+        text-align: center;
+    }
+    .gameover-dialog-score{
+        font-size: 1vw;
+        font-weight: 500;
+        align-self: center;
+        text-align: center;
+    }
 }
 
-.gameover-dialog-title{
-    font-size: 2vw;
-    font-weight: bolder;
-    align-self: center;
-    text-align: center;
-}
-.gameover-dialog-score{
-    font-size: 1vw;
-    font-weight: 500;
-    align-self: center;
-    text-align: center;
-}
 
 .gameover-button{
-    background-color:cornflowerblue!important;
+    background-color:rgba(0,146,255,1)!important;
     height: 5vh;
     color: white!important;
 }
