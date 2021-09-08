@@ -34,7 +34,7 @@ const Board = ({contributors}:BoardProps) => {
         setTimeout(() => setTurnedCards([]), 500)
       }
     }
-  },[turnedCards])
+  },[turnedCards, avatars])
 
   React.useEffect(() =>{
     if(foundCards.length === uniqueCards){
@@ -52,16 +52,16 @@ const Board = ({contributors}:BoardProps) => {
       }
     }, 1000);
       return () => clearInterval(interval);
-  }, [timer]);
+  }, [timer, gameCompletedModal]);
 
   const handleRestart = () => {
+    setAvatars(getMemoryImages);
+    setFound([])
+    setTurnedCards([])
     setGameCompletedModal(false);
     setGameOverModal(false);
-    setTurnedCards([])
-    setFound([])
-    setScore(0)
     setTimer(60)
-    setAvatars(getMemoryImages);
+    setScore(0)
   };
 
   const getMemoryImages = () =>{
