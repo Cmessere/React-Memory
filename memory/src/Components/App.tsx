@@ -1,4 +1,3 @@
-import { Button } from "@material-ui/core";
 import React from "react";
 import { getContributors } from "../Services/ApiClient";
 import { Contributor } from "../Services/Types";
