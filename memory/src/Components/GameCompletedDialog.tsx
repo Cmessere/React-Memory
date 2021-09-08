@@ -9,7 +9,7 @@ export const GameCompletedDialog = ({ handleRestart, isOpen, score }: DialogProp
           <div className="gameover-dialog">
             <p className="gameover-dialog-title">YOU WON!</p>
             <p className="gameover-dialog-score">Score:{score}</p>
-            <Button className="gameover-button" onClick={handleRestart}>Play Again!</Button>
+            <button className="gameover-button" onClick={handleRestart}>Play Again!</button>
           </div>
         </DialogContent>
     </Dialog>

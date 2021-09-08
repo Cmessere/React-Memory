@@ -49,10 +49,14 @@
 .gameover-button{
     background-color:rgb(141, 205, 255)!important;
     height: 5vh;
+    font-size: 32px;
+    border: 0px solid white;
+    border-radius: 5px;
     color: white!important;
+    cursor: pointer;
 }
 
 .gameover-button:hover{
-    background-color:rgb(166, 197, 255)!important;
+    background-color:rgb(206, 223, 255)!important;
     color: white!important;
 }
