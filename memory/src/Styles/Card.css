@@ -1,24 +1,51 @@
-.card{
-    margin: auto;
-    height: 20vw;
-    width: 20vw;
-    padding: 5px;
+@media screen and (max-width: 801px) {
+    .card{
+        margin: auto;
+        height: 20vw;
+        width: 20vw;
+        padding: 5px;
+    }
+
+    .memory-image{
+        margin: auto;
+        max-height: 20vw;
+        max-width: 20vw;
+        border: 2px solid black;
+    }
+    
+    .empty-card{
+        margin: auto;
+        height: 20vw;
+        width: 20vw; 
+        background-color: lightskyblue;
+        cursor: pointer;
+        border: 2px solid black;
+    }
 }
-.card-div{
-    margin: auto;
-}
-.memory-image{
-    margin: auto;
-    max-height: 20vw;
-    max-width: 20vw;
-    border: 2px solid black;
+@media screen and (min-width: 801px) {
+    .card{
+        margin: auto;
+        height: 10vw;
+        width: 10vw;
+        padding: 20px;
+    }
+    .memory-image{
+        margin: auto;
+        max-height: 10vw;
+        max-width: 10vw;
+        border: 2px solid black;
+    }
+    
+    .empty-card{
+        margin: auto;
+        height: 10vw;
+        width: 10vw; 
+        background-color: lightskyblue;
+        cursor: pointer;
+        border: 2px solid black;
+    }
 }
 
-.empty-card{
+.card-div{
     margin: auto;
-    height: 20vw;
-    width: 20vw; 
-    background-color: lightskyblue;
-    cursor: pointer;
-    border: 2px solid black;
 }
