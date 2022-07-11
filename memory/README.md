@@ -38,11 +38,11 @@ The remaining libraries are for testing
 I have to admit that figuring out how to implement the game's logic was harder than I thought. Needed some trial and error to get it right, but all in all it was fun.
 
 # Conclusions
-If I had more time I would probably focus on testing. I think it's the only real lack thereof. 
+To improve I would probably focus on testing. I think it's the only real lacking aspect. 
 
-Maybe tweak the style a little, add difficulty levels and maybe other image sets to choose from. There is a lot of potential upgrades that do not require too much effort.
+Maybe tweak the style a little, add difficulty levels and other image sets to choose from. There is a lot of potential upgrades that do not require too much effort.
 
 On a quick note, I decided not to make a generic Dialog on purpose and kept both Dialog separated.
 
-I would probably test more devices and resolutions if this was not an exercise. The Ipad pro specifically has been fickle in the past, and here it was not an exception.
+I would probably test more devices and resolutions if this was meant to go in production.
 
